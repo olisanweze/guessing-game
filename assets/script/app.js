@@ -35,7 +35,7 @@ function guessCheck(num) {
         output.innerText = guess > num ? 'My number is smaller' : 
         guess < num ? 'My number is bigger' : 'Great guess! You won!';
         
-        if (input.value === num) { 
+        if (input.value == num) { 
             reset.classList.add('display');
             return;
         }

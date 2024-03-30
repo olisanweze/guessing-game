@@ -87,10 +87,6 @@ button span {
     text-align: center;
 }
 
-input {
-    caret-color: transparent;
-}
-
 .output {
     padding: 0 15px;
     margin-top: 40px;
