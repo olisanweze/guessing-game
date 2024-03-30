@@ -46,6 +46,7 @@ function guessCheck(num) {
 
     if (defaultGuess === 0) {
         reset.classList.add('display');
+        output.innerText = `My number is ${num}`;
     }
 }
 
