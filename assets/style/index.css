@@ -4,7 +4,7 @@
     --font-color-black: #000;
     --app-color-white: #fff;
     --color-grey: rgb(0 0 0 / 0.1);
-    --color-output-textbox: rgb(0 0 0 / 0.6);
+    --color-output-textbox: rgb(0 0 0 / 0.25);
 }
 
 .container {
@@ -34,8 +34,8 @@ p {
 
 .hint {
     color: rgb(255 255 255 / 0.5);
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
 span, placeholder, input[type="text"], p {
@@ -43,7 +43,7 @@ span, placeholder, input[type="text"], p {
 }
 
 button {
-    width: 200px;
+    width: 160px;
     height: 44px;
     border-radius: 5px;
     background-color: var(--app-color-white);
@@ -75,14 +75,14 @@ button span {
 .guesses-left {
     font-size: 35px;
     font-weight: 600;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .input {
     background-color: var(--app-color-white);
     font-size: 50px;
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     text-align: center;
 }
@@ -110,6 +110,6 @@ button span {
 
 @media (max-width: 480px) {
     .output {
-        width: 100%;
+        width: 80%;
     }
 }
