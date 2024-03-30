@@ -35,6 +35,11 @@ function guessCheck(num) {
         output.innerText = guess > num ? 'My number is smaller' : 
         guess < num ? 'My number is bigger' : 'Great guess! You won!';
         
+        if (input.value == num) { 
+            reset.classList.add('display');
+            return;
+        }
+        
         defaultGuess--;
         break;
     }
@@ -59,6 +64,7 @@ function resetGame() {
     output.textContent = '';
     input.value = 0;
     pageTheme();
+    generatedNum = genNumber();
     reset.classList.remove('display');
 }
 
