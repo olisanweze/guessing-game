@@ -58,6 +58,7 @@ function resetGame() {
     guesses.innerText = `Guesses: ${defaultGuess}`;
     output.textContent = '';
     input.value = 0;
+    pageTheme();
     reset.classList.remove('display');
 }
 
