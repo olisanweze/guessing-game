@@ -2,7 +2,7 @@
 
 :root {
     --font-color-black: #000;
-    --font-color-white: #fff;
+    --app-color-white: #fff;
     --color-grey: rgb(0 0 0 / 0.1);
     --color-output-textbox: rgb(0 0 0 / 0.6);
 }
@@ -28,6 +28,16 @@ main {
     height: 100%;
 }
 
+p {
+    color: var(--app-color-white);
+}
+
+.hint {
+    color: rgb(255 255 255 / 0.5);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
 span, placeholder, input[type="text"], p {
     font-weight: 700;
 }
@@ -36,7 +46,7 @@ button {
     width: 200px;
     height: 44px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--app-color-white);
 }
 
 .reset-button {
@@ -63,14 +73,13 @@ button span {
 }
 
 .guesses-left {
-    color: #fff;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
 }
 
 .input {
-    background-color: #fff;
+    background-color: var(--app-color-white);
     font-size: 50px;
     height: 150px;
     width: 150px;

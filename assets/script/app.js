@@ -20,7 +20,7 @@ function rgbBuilder() {
 }
 
 function genNumber() {
-    let numGenerated = Math.floor(Math.random() * 25);
+    let numGenerated = Math.floor(Math.random() * 26);
     return numGenerated;
 }
 
@@ -69,6 +69,7 @@ submit.addEventListener('click', () => {
 reset.addEventListener('click', resetGame);
 
 window.addEventListener('load', () => {
+    input.value = 0;
     pageTheme();
     generatedNum = genNumber();
     guesses.innerText = `Guesses: ${defaultGuess}`;
