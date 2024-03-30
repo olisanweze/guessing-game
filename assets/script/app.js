@@ -62,16 +62,17 @@ function resetGame() {
     reset.classList.remove('display');
 }
 
+function pageReset() {
+    input.value = 0;
+    pageTheme();
+    generatedNum = genNumber();
+    guesses.innerText = `Guesses: ${defaultGuess}`;
+}
+
 submit.addEventListener('click', () => {
     guessCheck(generatedNum);
     guesses.innerText = `Guesses: ${defaultGuess}`;
 });
 
 reset.addEventListener('click', resetGame);
-
-window.addEventListener('load', () => {
-    input.value = 0;
-    pageTheme();
-    generatedNum = genNumber();
-    guesses.innerText = `Guesses: ${defaultGuess}`;
-});
+window.addEventListener('load', pageReset);
