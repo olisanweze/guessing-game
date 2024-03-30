@@ -27,7 +27,7 @@ function genNumber() {
 function guessCheck(num) {
     while (defaultGuess > 0) {
         let guess = input.value;
-        if (isNan(guess) || guess < 0 || guess > 25) {
+        if (isNaN(guess) || guess < 0 || guess > 25) {
             output.innerText = 'Out of bounds';
             return;
         }
