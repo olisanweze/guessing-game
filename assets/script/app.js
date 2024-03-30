@@ -10,7 +10,7 @@ let defaultGuess = 5;
 let generatedNum;
 
 function genColor() {
-    let colorNum = Math.floor(Math.random() * 256);
+    let colorNum = Math.floor(Math.random() * 128);
     return colorNum;
 }
 
