@@ -1,7 +1,7 @@
 'use strict';
 
 const body = document.querySelector('body');
-const begin = document.querySelector('.begin-button');
+const reset = document.querySelector('.reset-button');
 const submit= document.querySelector('.submit-button');
 const guesses = document.querySelector('.guesses-left');
 const input = document.querySelector('.input');
@@ -23,30 +23,54 @@ function genNumber() {
     return numGenerated;
 }
 
-function guessCheck(numGenerated) {
+function guessCheck(num) {
     while (defaultGuess > 0) {
-        if (input > numGenerated) {
+        let guess = parseInt(input.value);
+        if (guess > num) {
             output.innerText = 'My number is smaller';
             defaultGuess--;
-        }   else if (input < numGenerated) {
+            break;
+        }   else if (guess < num) {
             output.innerText = 'My number is bigger';
             defaultGuess--;
+            break;
         }   else {
             output.innerText = 'Great guess! You won!';
+            break;
         }
+    }
+
+    if (defaultGuess === 0) {
+        reset.classList.add('display');
     }
 }
 
 function pageTheme() {
     let pageTheme = rgbBuilder();
     body.style.backgroundColor = pageTheme;
-    begin.style.color = pageTheme;
+    reset.style.color = pageTheme;
     submit.style.color = pageTheme;
     input.style.color = pageTheme;
 }
 
+function resetGame() {
+    defaultGuess = 5;
+    guesses.innerText = `Guesses: ${defaultGuess}`;
+    output.textContent = '';
+    input.textContent = 0;
+    reset.classList.remove('display');
+}
+
+submit.addEventListener('click', () => {
+    let generatedNum = genNumber();
+    guessCheck(generatedNum);
+    guesses.innerText = `Guesses: ${defaultGuess}`;
+});
+
+reset.addEventListener('click', resetGame);
+
 window.addEventListener('load', () => {
     pageTheme();
-    guesses.innerText = `Guesses: ${defaultGuess}`;
     genNumber();
+    guesses.innerText = `Guesses: ${defaultGuess}`;
 });
