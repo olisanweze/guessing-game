@@ -104,7 +104,7 @@ button span {
 }
 
 i {
-    margin-left: 12px;
+    margin-left: 6px;
 }
 
 /*===============================*/
@@ -113,6 +113,6 @@ i {
 
 @media (max-width: 480px) {
     .output {
-        width: 90%;
+        width: 92%;
     }
 }
