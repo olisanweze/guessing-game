@@ -7,6 +7,7 @@ const guesses = document.querySelector('.guesses-left');
 const input = document.querySelector('.input');
 const output = document.querySelector('.output p');
 let defaultGuess = 5;
+let guess;
 let generatedNum;
 
 function genColor() {
@@ -25,31 +26,38 @@ function genNumber() {
 }
 
 function guessCheck(num) {
+    guess = parseInt(input.value);
+    let reaction;
     while (defaultGuess > 0) {
-        let guess = input.value;
         if (isNaN(guess) || guess < 0 || guess > 25) {
-            output.innerText = 'Out of bounds';
+            reaction = '<i class="fa-solid fa-face-rolling-eyes"></i>';
+            output.innerHTML = `Out of bounds ${reaction}`;
             return;
         }
         
-        output.innerText = guess > num ? 'My number is smaller' : 
-        guess < num ? 'My number is bigger' : 'Great guess! You won!';
-        
-        if (input.value == num) { 
-            reset.classList.add('display');
-            return;
-        }
+        generateReaction(guess, num);
+
+        if (input.value == num) { reset.classList.add('display'); return; }
         
         defaultGuess--;
         break;
     }
 
     if (defaultGuess === 0) {
+        reaction = '<i class="fa-solid fa-face-grin-wink"></i>';
         reset.classList.add('display');
-        output.innerText = `My number is ${num}`;
+        output.innerHTML = `My number is ${num} ${reaction}`;
     }
 }
 
+function generateReaction(guess, num) {
+    let emoji = guess > num || guess < num ?
+    '<i class="fa-solid fa-face-grin-tongue-wink"></i>' :
+    '<i class="fa-solid fa-face-grin-beam"></i>';
+
+    output.innerHTML = `${guess > num ? 'My number is smaller' : 
+    guess < num ? 'My number is bigger' : 'Great guess! You won!'} ${emoji}`;
+}
 
 function pageTheme() {
     let pageTheme = rgbBuilder();

@@ -95,12 +95,16 @@ button span {
     background-color: var(--color-output-textbox);
 }
 
-.output p {
+.output p, i {
     font-weight: 600;
     font-size: 20px;
     color: rgb(255 255 255 / 0.7);
     line-height: 60px;
     text-align: center;
+}
+
+i {
+    margin-left: 12px;
 }
 
 /*===============================*/
@@ -109,6 +113,6 @@ button span {
 
 @media (max-width: 480px) {
     .output {
-        width: 85%;
+        width: 90%;
     }
 }
