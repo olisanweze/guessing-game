@@ -6,6 +6,7 @@ const submit= document.querySelector('.submit-button');
 const guesses = document.querySelector('.guesses-left');
 const input = document.querySelector('.input');
 const output = document.querySelector('.output p');
+const outputPanel = document.querySelector('.output');
 let defaultGuess = 5;
 let guess;
 let generatedNum;
@@ -75,6 +76,7 @@ function resetGame() {
     pageTheme();
     generatedNum = genNumber();
     reset.classList.remove('display');
+    outputPanel.classList.remove('visible');
 }
 
 function pageReset() {
@@ -86,6 +88,7 @@ function pageReset() {
 
 submit.addEventListener('click', () => {
     guessCheck(generatedNum);
+    outputPanel.classList.add('visible');
     guesses.innerText = `Guesses: ${defaultGuess}`;
 });
 

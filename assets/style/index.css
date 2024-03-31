@@ -4,7 +4,7 @@
     --font-color-black: #000;
     --app-color-white: #fff;
     --color-grey: rgb(0 0 0 / 0.1);
-    --color-output-textbox: rgb(0 0 0 / 0.25);
+    --color-output-textbox: rgb(0 0 0 / 0.1);
 }
 
 .container {
@@ -88,11 +88,16 @@ button span {
 }
 
 .output {
+    visibility: hidden;
     margin-top: 40px;
     height: 60px;
     width: 480px;
     border-radius: 5px;
     background-color: var(--color-output-textbox);
+}
+
+.visible {
+    visibility: visible;
 }
 
 .output p, i {
